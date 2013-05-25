@@ -2,13 +2,16 @@ PQI_AirCard
 ===========
 
 PQI Aircard digital camera DPOF function used by ftp sending script.
+
 1.Introduction
 This is PQI AirCard modified shell script and wifi ftp setting perl source code.
 Normally AirCard can not ftp server files pushing. But, this code can provide you ftp push interface.
 
-2.What this can do;
+2.What this can do
 1)To use DPOF function of Digital camera, DPOF selected by images for ftp transfer.
+
 2)To Add to internal MMC automatically.
+
 3)To see AirCard IP address on your web browser.
 4)To remake shell script automatically even if the perform disk erases the SD.
 
