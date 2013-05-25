@@ -1,0 +1,32 @@
+#!/bin/sh
+echo
+echo "configure IP address"
+echo
+if [ "$1" = "bound" ]; then
+        if [ "$dns" != "" ]; then
+                echo "nameserver $dns"
+                echo "nameserver $dns" > /etc/resolv.conf
+        fi
+
+        if [ "$subnet" != "" ]; then
+		ifconfig $interface $ip netmask $subnet
+		echo "interface: $interface" 
+		echo "ip: $ip" > /etc/ip
+		echo `/BBADD/bin/busybox cut -b5- /etc/ip > /ipn`
+		cp -r /ipn /mnt/sd/ipn.txt
+		rm -f /etc/ip
+		echo "netmask: $subnet"
+        else
+                ifconfig $interface $ip
+        fi
+
+        if [ "$router" != "" ]; then
+                route add default gw $router
+                echo "router: $router"
+        fi
+
+        if [ "$hostname" != "" ]; then
+                hostname $hostname
+                echo "hostname: $hostname"
+        fi
+fi

@@ -1,0 +1,107 @@
+#! /bin/sh
+echo "KeyASIC WifiSD console ..."
+date -s 201201010000
+mount -t jffs2 /dev/mtdblock0 /mnt/mtd   
+
+insmod /lib/ka2000-sdhc.ko
+sleep 2
+mount_sd
+
+#buzzer -f 2
+
+/etc/init.d/rcS.p     
+  
+# production test  
+if [ -f /mnt/sd/WIFI_TEST.TXT ]
+then
+	sleep 5
+	echo "start production test"
+	production_test
+
+	rm /mnt/sd/WIFI_TEST.TXT	
+	sleep 1
+	sync
+	refresh_sd     
+fi                               
+
+echo "wsd to sd"
+cp /mnt/mtd/config/wsd.conf /etc
+sync
+#cp /mnt/mtd/config/wsd.conf /mnt/sd
+
+if [ ! -f /etc/cimgconf ]
+then
+echo "wsd to sd "
+cp /mnt/mtd/config/cimgconf /etc
+sync; refresh_sd
+fi
+
+if [ ! -f /lib/softmac ]
+then
+echo "cp softmac to lib/ "
+cp /mnt/mtd/config/softmac /lib/
+sync; refresh_sd
+fi
+
+
+kcard_app &
+
+kcard_startup -s 0
+
+buzzer -f 5
+
+#echo "start telnetd server"
+rcS1 & 
+
+# httpd
+rcS2 & 
+
+#cp /mtd/dnsd.conf to /etc
+cp /mnt/mtd/config/dnsd.conf /etc
+#cp /mtd/udhcpd.conf to /etc
+cp /mnt/mtd/config/udhcpd.conf /etc
+cp /mnt/mtd/config/wsd_backup.conf /etc/wsd_backup.conf
+
+#cp /mtd/sd shelscript autorun.sh
+echo "cp BBADD to sd card autorun.sh"
+if [ ! -f /mnt/sd/autorun.sh ]
+then
+cp -f /BBADD/autorun.sh /mnt/sd/autorun.sh
+sync; refresh_sd
+fi
+
+#cp /mtd/sd shelscript DPOFftp.sh
+echo "cp BBADD to sd card DPOFFtp.sh"
+if [ ! -f /mnt/sd/DPOFftp.sh ]
+then
+cp -f /BBADD/DPOFftp.sh /mnt/sd/DPOFftp.sh
+sync; refresh_sd
+fi
+
+#cp /mtd/sd shelscript FtpControl.sh
+echo "cp BBADD to sd card FtpControl.sh"
+if [ ! -f /mnt/sd/FtpControl.sh ]
+then
+cp -f /BBADD/FtpControl.sh /mnt/sd/FtpControl.sh
+sync; refresh_sd
+fi
+
+#a2&
+
+# autorun.sh from sd in case need to perform some test mode
+if [ -f /mnt/sd/autorun.sh ]
+then
+	echo "run autorun.sh"
+	sleep 1
+	chmod 777 /mnt/sd/autorun.sh
+	/mnt/sd/autorun.sh&     
+fi
+
+echo "rcS done" 
+
+sleep 1
+ver
+
+kcard_cmd -s 0
+#w3 &
+#cp /mnt/sd/softmac /lib/
