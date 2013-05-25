@@ -26,6 +26,7 @@ ping -c1 ${Address}
 	/mnt/sd/DPOFftp.sh
 	exit 0
 	else
+	sleep 3
 	continue 2
 	fi
 	done
