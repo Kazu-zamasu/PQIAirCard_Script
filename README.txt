@@ -9,9 +9,7 @@ Normally AirCard can not ftp server files pushing. But, this code can provide yo
 
 2.What this can do
 1)To use DPOF function of Digital camera, DPOF selected by images for ftp transfer.
-
 2)To Add to internal MMC automatically.
-
 3)To see AirCard IP address on your web browser.
 4)To remake shell script automatically even if the perform disk erases the SD.
 
