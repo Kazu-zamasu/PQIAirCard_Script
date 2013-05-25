@@ -109,9 +109,10 @@ done
 	fi
 else
 iwconfig mlan0 power on
-/mnt/sd/FTPControl.sh
+/mnt/sd/FtpControl.sh
 exit 0
 fi
 iwconfig mlan0 power on
+#/mnt/sd/FtpControl.sh
 sync
 exit 0
