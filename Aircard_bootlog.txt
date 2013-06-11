@@ -1,0 +1,164 @@
+/Serial port configuration 38400-8-N-1
+
+------- start
+
+KA Boot 04240806
+div=9f00
+scu: 11c33303,00000000,00040404,00009f00,1
+Status 20200804
+*** Warning - bad CRC, using default environment
+
+
+Hit to stop :  0
+Status 20200804
+RCA0 24, RCA1 e6
+....reading program.bin
+.................<mmc1>go 208000
+<4>(192-96-1)
+console [ttyS0] enabled
+NET: Registered protocol family 16
+cfg80211: Calling CRDA to update world regulatory domain
+NET: Registered protocol family 2
+TCP: Hash tables configured (established 1024 bind 1024)
+TCP reno registered
+ttyS0 at MMIO 0xa0004000 (irq = 1) is a KA2000
+msgmni has been set to 58
+loop: module loaded
+TCP cubic registered
+NET: Registered protocol family 17
+lib80211: common routines for IEEE802.11 drivers
+starting pid 27, tty '/dev/console': '/etc/init.d/rcS'
+KeyASIC WifiSD console ...
+Sun Jan  1 00:00:00 UTC 2012
+(0>0)switch_modules
+init bomb irq
+req irq 40 (1000000)
+req irq 43 (40)
+req irq 41 (43)
+ka_sdhc_drv_init
+bw = 22
+mmc0: new SDHC card at address e624
+mmcblk0: mmc0:e624 CAR 14.8 GiB 
+ mmcblk0:bootsec @ 2000
+ p1
+FAT sec 256 sz ed5 #2 rtdir 2000 csz 40
+wsd to sd
+wsd to sd 
+umount
+FAT sec 256 sz ed5 #2 rtdir 2000 csz 40
+cp softmac to lib/ 
+umount
+FAT sec 256 sz ed5 #2 rtdir 2000 csz 40
+set pid 53
+(0>1)KCARD_DISABLE_POWER_MGMT
+this is kcard startup app
+Finding:"Auto WiFi Mode": Got: "Disable"
+kcard app, call interval 10
+start boa
+dcim c 3 @4040, f:2256 (off 44ac08)
+cp BBADD to sd card autorun.shFolder: 199_WIFIWSD00001WSD00002WSD00003 (5f393931 49464957)
+
+cp BBADD to sd card DPOFFtp.shImg1: WSD00001WSD00002WSD00003 (30445357 31303030 sz b520h)
+
+cp BBADD to sd card FtpControl.shImg2: WSD00002WSD00003 (30445357 32303030 sz c293h)
+
+run autorun.shImg3: WSD00003 (30445357 33303030 sz c501h)
+
+user_dir:(00000000 00000000)(00000000 00000000)
+ctrlimg c 6ea3d @1bacec0, f:302a (off 6054f0)
+
+1 c 6ea3f-6ea41 @1bacf40 f:302a(o:63)
+fat cnt 2, x0, pBuf1 c102c400, pBuf2 0(0)
+2 c 6ea41-6ea43 @1bacfc0 f:302a(o:65)
+fat cnt 2, x0, pBuf1 c102c400, pBuf2 0(0)
+3 c 6ea43-6ea45 @1bad040 f:302a(o:67)
+fat cnt 2, x0, pBuf1 c102c400, pBuf2 0(0)
+misc c 895 @264c0
+bomb reg2 264c0 - 264c5
+[01/Jan/2012:00:00:02 +0000] bomb reg 2256 - 312b
+boa: server version st 6ea01, 1:63, 2:65, 3:67, 4:0, 5:0
+Boa/0.94.14rc21bomb reg 2256 - 312b
+
+[01/Jan/2012:00:00:02 +0000] (1>0)boa: server built Dec 19 2012 at 17:13:38.
+[01/Jan/2012:00:00:02 +0000] boa: starting server pid=67, port 80
+rcS done
+/mnt/sd/autorun.sh: line 1: ﻿#!/bin/sh: not found
+
+----------------------------------------------------------
+  Production mode-VER. 147_DEC202012_M -Date 20/12/2012
+------------------------------------------------------------
+
+sleep disable
+
+Please press Enter to activate this console. w2...
+ifconfig: SIOCGIFFLAGS: No such device
+
+rmmod: can't unload 'ar6000': unknown symbol in module, or unknown parameter
+ifconfig: SIOCGIFFLAGS: No such device
+sdio wakeup
+mmc1: new SDIO card at address 0001
+AR6000: configuration opcode 7 is only used for RTOS systems, not Linux systems
+ath6k/AR6003/hw2.1.1/athwlan.bin firmware will be loaded
+AR6K: ** HIF layer does not support scatter requests (17) 
+wmi_control_rx() : Unknown id 0x101e
+lo        no wireless extensions.
+
+iwioctl: cmd=0x8b03 not allowed in this mode
+iwioctl: cmd=0x8b1d not allowed in this mode
+iwioctl: cmd=0x8b23 not allowed in this mode
+iwioctl: cmd=0x8b25 not allowed in this mode
+mlan0     AR6000 802.11ng  Nickname:""
+          NWID:off/any  Mode:Managed  Bit Rate:1 Mb/s   Tx-Power=0 dBm   
+          Sensitivity=0/3  
+          Retry:on   RTS thr=0 B   Fragment thr=0 B   
+          Encryption key:off
+          Power Management:on
+          Link Quality:255/94  Signal level:-96 dBm  Noise level:-96 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+Add Filter 0 = 01:00:5e:00:00:01
+Keep Filter 0 = 01:00:5e:00:00:01
+Keep Filter 0 = 01:00:5e:00:00:01
+auto connect available router
+Finding:"AP_ACCOUNT": Got: "3"
+size 3145
+get_all_essid 0 -> 3145
+ESSID  [XXXXXX], cell 68 -> 1108
+WPA Version
+ESSID  [PS3-1498141], cell 1108 -> 1856
+WPA Version
+ESSID  [4CE67671415F], cell 1856 -> 3145
+WPA Version
+Finding:"AP_SSID": Got: "XXXXXX"
+Finding:"AP_Key": Got: "XXXXXX"
+Finding:"AP_SSID": Got: "XXXXXX"
+Finding:"AP_Key": Got: "XXXXXX"
+found XXXXXX at 0
+AP:ssid=XXXXXX, key=XXXXXX, mode=1, enc_type=1
+Error for wireless request "Set Encode" (8B2A) :
+    SET failed on device mlan0 ; Input/output error.
+channel hint set to 2412
+WMM params
+AC 0, ACM 0, AIFSN 3, CWmin 4, CWmax 10, TXOPlimit 0
+AC 1, ACM 0, AIFSN 7, CWmin 4, CWmax 10, TXOPlimit 0
+AC 2, ACM 0, AIFSN 2, CWmin 3, CWmax 4, TXOPlimit 94
+AC 3, ACM 0, AIFSN 2, CWmin 2, CWmax 3, TXOPlimit 47
+udhcpc (v1.18.5) started
+
+configure IP address
+
+Sending discover...
+Sending select for 192.168.1.7...
+Lease of 192.168.1.7 obtained, lease time 21600
+
+configure IP address
+
+nameserver 192.168.1.1
+Keep Filter 0 = 01:00:5e:00:00:01
+interface: mlan0
+
+netmask: 255.255.255.0
+router: 192.168.1.1
+---------------------finish
+#
