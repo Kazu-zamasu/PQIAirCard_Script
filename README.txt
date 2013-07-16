@@ -35,6 +35,7 @@ SD
 ├dhcp.script
 ├kcard_edit_config.pl
 ├kcard_save_config.pl
+├initramfs3.gz(PQI origin)
 └rcS
 
 5)Insert your SD card on devices at correct working PQI AirCard.
@@ -45,7 +46,7 @@ SD
 ├MISC
 ├DCIM
 ├autorun.sh
-├initramfs3.gz
+├initramfs3.gz(Modified)
 └good.txt
 
 8)If you find error.txt, back to the step 3).
