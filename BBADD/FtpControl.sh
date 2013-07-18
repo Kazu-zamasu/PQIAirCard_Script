@@ -1,6 +1,6 @@
 #!/bin/sh
 sleep 10
-if [ ${detect1} != /mnt/sd/DCIM/199_WIFI/WSD00001.JPG ];
+if ! [ -s /mnt/sd/DCIM/199_WIFI/WSD00001.JPG ];
 then
 #This address is PQI w1 mode deffult.
 Address=192.168.1.50
@@ -19,9 +19,7 @@ ping -c1 ${Address}
 	#Check AUTPRINT.MRK file
 	while :
 	do
-	test -s /mnt/sd/MISC/AUTPRINT.MRK
-	check=`echo $?`
-	if [ "${check}" = 0 ];
+	if [ -s /mnt/sd/MISC/AUTPRINT.MRK ];
 	then
 	/mnt/sd/DPOFftp.sh
 	exit 0
